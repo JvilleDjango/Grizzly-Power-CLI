@@ -1,0 +1,23 @@
+<template>
+<section class="history">
+  <header>
+    <h1>History</h1>
+  </header>
+  <div class="flex-table-container container-fluid history-box">
+    <div class="flex-column" repeat.for='historyData of history'>
+      <div class="flex-column--header">
+        <span>${historyData.day_of_week}</span>
+        <br />
+        <span> ${historyData.day}, ${historyData.month}</span>
+      </div>
+      <div class="flex-column--block">
+        <ul class="exercise-block" repeat.for="list of historyData.exercise_list">
+          <li>${list.lift}</li>
+          <li>${list.reps}</li>
+          <li>${list.weight + ' lbs'}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</template>

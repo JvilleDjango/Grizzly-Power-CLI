@@ -1,0 +1,16 @@
+<template>
+<div class="summary col-md-12">
+  <!-- <figure class="bear-img">Image of a bear</figure> -->
+  <h2>Workout Summary</h2>
+  <div class="container" show.bind="showWorkouts">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="summary-title">${selectedMicrocycle.name}</div>
+        <div class="flex-summary-box">
+          <div class="flex-summary-item" repeat.for="workout of selectedWorkouts">${workout.name}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</template>

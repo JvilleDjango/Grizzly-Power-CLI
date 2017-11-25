@@ -1,0 +1,14 @@
+<template bindable="router">
+
+<section class="au-animate nav-wrapper">
+  <nav class="side-nav">
+    <ul class="nav">
+     <li  repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+       <a  href.bind="row.href"> <i class='material-icons'>${row.settings.icon}</i></a>
+       <a  href.bind="row.href">  ${row.title}</a>
+     </li>
+   </ul>
+  </nav>
+</section>
+
+</template>

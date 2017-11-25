@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: $font-stack-roboto;
+  background: #fff;
+  overflow: hidden;
+
+  a {
+    color: $blue;
+  }
+
+  .page-host {
+    section {
+      &:not(:first-child) {
+        padding: 45px;
+      }
+    }
+  }
+}
+
+hr {
+  border-top: 1px solid #212121;
+}
+
+figure {
+  display: block;
+  border: 3px solid #212121;
+}
+/* Flex box */
+
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  z-index: -1;
+  padding-left: 0;
+  padding-right: 0;
+
+  > .row {
+    height: 93vh;
+    min-width: 100%;
+    margin-left: 0;
+
+    > .col-2 {
+      background: $medium-dark-grey;
+      color: #fff;
+      flex: 1;
+      padding-right: 0;
+      padding-left: 0;
+      position: absolute;
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+      height: 100%;
+    }
+
+    > .content {
+      padding-right: 0;
+      padding-left: 0;
+      flex: 2 0 100%;
+      max-width: 100%;
+      overflow: auto;
+      // padding: 30px;
+      background: #fff;
+      // box-shadow: 0 0 5px rgba(0,0,0,1);
+      transform: translate3d(0,0,0);
+      transition: all 0.5s ease;
+
+      &.isOpen {
+        transform: translate3d(16.66667vw,0,0);
+        flex: 1 0 83.33333%;
+        max-width: 83.33333%;
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .flex-container {
+    > .row {
+      > .col-md-2 {
+        flex: 0 0 55px;
+        max-width: 55px;
+      }
+
+      > .col-md-10 {
+        flex: 2 0 100%;
+        max-width: 100%;
+
+        &.isOpen {
+          transform: translate3d(16.66667vw,0,0);
+          flex: 1 0 95%;
+          max-width: 95%;
+        }
+      }
+    }
+  }
+}

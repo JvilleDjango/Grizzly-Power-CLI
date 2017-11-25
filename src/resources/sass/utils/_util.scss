@@ -1,0 +1,16 @@
+/* ===  Utility Classes === */
+
+@each $colors, $hex in (blue, $blue),(tomato, $tomato),(gold, $gold) {
+  .color-#{$colors} {
+    color: #{$hex};
+  }
+  .btn--#{$colors}{
+    background: #{$hex}
+  }
+}
+
+@each $alignment in (left, right, center){
+  .text-align-#{$alignment}{
+    text-align: $alignment;
+  }
+}

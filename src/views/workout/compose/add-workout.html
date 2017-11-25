@@ -1,0 +1,11 @@
+<template>
+<!-- ADD WORKOUTS -->
+<div class="add-workouts col-md-12">
+  <h2>Add Workouts</h2>
+  <label class="custom-control custom-radio" repeat.for="workout of workouts">
+          <input type="checkbox" id="" name="radio" class="custom-control-input" model.bind="workout" checked.bind="selectedWorkouts">
+            <span class="control-indicator"></span>
+          <span class="custom-control-description"> ${workout.name}</span>
+        </label>
+</div>
+</template>

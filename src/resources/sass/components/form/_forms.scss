@@ -1,0 +1,148 @@
+/* === Forms === */
+
+.form-control {
+  margin: 0;
+  outline: none;
+  -webkit-appearance: none;
+  tap-highlight-color: rgba(255, 255, 255, 0);
+  line-height: 1.2142em;
+  padding: 0.67861429em 0.5em;
+  font-size: 1em;
+  background: transparent;
+  border: none;
+    color: $blue;
+  border-radius: 0;
+  box-shadow: none;
+  transition: color 0.1s ease, border-color 0.1s ease;
+  border-bottom: 1px solid #DDDDDD;
+
+  &:focus {
+    border-color: $tomato;
+  }
+}
+
+.col-form-label {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+  display: block;
+  margin: 0 0 0.28571429rem;
+  //color: rgba(0, 0, 0, 0.87);
+  //font-size: 0.78571429em;
+  // font-weight: bold;
+  text-transform: uppercase;
+
+
+  &:after{
+    content: ':'
+  }
+}
+
+
+
+// http://codepen.io/mallendeo/pen/eLIiG
+// <input class="tgl tgl-light" id="cb1" type="checkbox" />
+// <label class="tgl-btn" for="cb1"></label>
+
+.tgl {
+  display: none;
+}
+
+.tgl,
+.tgl *,
+.tgl *:after,
+.tgl *:before,
+.tgl + .tgl-btn,
+.tgl:after,
+.tgl:before {
+  box-sizing: border-box;
+}
+
+.tgl *::-moz-selection,
+.tgl *:after::-moz-selection,
+.tgl *:before::-moz-selection,
+.tgl + .tgl-btn::-moz-selection,
+.tgl::-moz-selection,
+.tgl:after::-moz-selection,
+.tgl:before::-moz-selection {
+  background: none;
+}
+
+.tgl *::selection,
+.tgl *:after::selection,
+.tgl *:before::selection,
+.tgl + .tgl-btn::selection,
+.tgl::selection,
+.tgl:after::selection,
+.tgl:before::selection {
+  background: none;
+}
+
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 2em;
+  height: 1em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tgl + .tgl-btn:after,
+.tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+
+.tgl + .tgl-btn:before {
+  display: none;
+}
+
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+
+.tgl-light + .tgl-btn {
+  background: #f0f0f0;
+  border-radius: 2em;
+  padding: 2px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.tgl-light + .tgl-btn:after {
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.tgl-light:checked + .tgl-btn {
+  background: $tomato;
+}
+// Radios styles
+.custom-control-input:checked ~ .custom-control-indicator {
+    color: #fff;
+    background-color: $tomato;
+}
+input{
+  &:focus{
+
+      outline: -webkit-focus-ring-color auto 5px;
+      outline-color: -webkit-focus-ring-color;
+      outline-style: auto;
+      outline-width: 5px;
+
+
+  }
+}

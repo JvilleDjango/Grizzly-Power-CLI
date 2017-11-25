@@ -1,0 +1,82 @@
+// CARDS
+/* FLEX CARDS
+============================*/
+
+.flex-card-container {
+  // justify-content: space-around;
+  -webkit-flex-flow: column wrap;
+  justify-content: space-between;
+  height: 34vw;
+
+  .flex-card {
+    position: relative;
+    display: block;
+    margin-bottom: 0.75rem;
+    background-color: #fff;
+    border-radius: 0.15rem;
+    border: 1px solid #212121;
+    //min-width: 100px;
+    margin-right: 0.75em;
+
+    .flex-card--block {
+      font-family: $font-stack-fajalla;
+
+      .flex-card--title {
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid #212121;
+        padding: 10px;
+        font-size: 1.5rem;
+      }
+
+      .flex-card--body {
+        padding: 10px;
+      }
+    }
+  }
+
+  .flex-1 {
+    flex: 1 33.3333%;
+  }
+
+  .flex-1--auto {
+    flex: 1 auto;
+  }
+
+  .flex-2 {
+    flex: 2 auto;
+  }
+
+  .align-self--baseline {
+    align-self: baseline;
+  }
+}
+// @media only screen and (min-width : 1200px) {
+//   .flex-card-container {
+//     // justify-content: space-between;
+//     -webkit-flex-flow: row wrap;
+//     .flex-1 {
+//       flex: 1 100%;
+//     }
+//   }
+// }
+@media only screen and (max-width : 1199px) {
+  .flex-card-container {
+    // justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+
+    .flex-1 {
+      flex: 1 22%;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .flex-card-container {
+    // justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+
+    .flex-1 {
+      flex: 1 100%;
+    }
+  }
+}

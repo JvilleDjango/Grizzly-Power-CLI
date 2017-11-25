@@ -1,0 +1,31 @@
+/* === Pages Common === */
+header {
+  padding: 15px;
+  border-bottom: 1px solid #424242;
+
+  h1 {
+    color: $tomato;
+    text-transform: uppercase;
+    font-family: $font-stack-fajalla;
+    font-size: 3em;
+    margin-bottom: 0;
+  }
+
+  .lead {
+    text-transform: lowercase;
+    font-style: italic;
+  }
+}
+
+[class*="-box"] {
+  padding: 30px;
+}
+/* Page Paritals
+=====================*/
+@import './settings';
+@import './dashboard';
+@import './profile';
+@import './workouts';
+@import './progress';
+@import './history';
+@import './calendar';
