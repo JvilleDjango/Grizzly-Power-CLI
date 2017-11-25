@@ -1,13 +1,12 @@
 /* === Components === */
-
 .table-bordered {
   border-width: 3px;
 }
 /* Components
 ========================*/
-@import './buttons';
-@import './cards';
-@import './flex-table';
-@import './form/forms';
-@import './navigation/navigation';
-@import './navigation/side-navigation';
+@import './_buttons';
+@import './_cards';
+@import './_flex-table';
+@import './form/_forms';
+@import './navigation/_navigation';
+@import './navigation/_side-navigation';

@@ -1,4 +1,4 @@
-// import {CssAnimator} from 'aurelia-animator-css';
+import {CssAnimator} from 'aurelia-animator-css';
 
 export class Workout {
   static inject = [CssAnimator];

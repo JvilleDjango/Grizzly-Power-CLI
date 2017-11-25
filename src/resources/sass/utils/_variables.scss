@@ -1,22 +1,36 @@
+// ==========================================================================
+// Grizzly Power[gp] – Variables
+// ==========================================================================
 
+//Global Typography
 $font-stack-fajalla: 'Fjalla One', sans-serif;
-$font-stack-roboto:'Roboto', sans-serif;
+$font-stack-roboto: 'Roboto', sans-serif;
+$gp-background-color: '#fff';
 
+
+// Colors
 $medium-grey: rgba(65,65,65, 1);
 $medium-dark-grey: #212121;
 $dark-grey: #2b2b2b;
-
 $tomato: rgba(255, 99, 71, 1);
-$gold:#ffbf47;
+$gold: #ffbf47;
 $blue: #4787ff;
 
+// Grid Containers
+$container: 100% !default;
+$container-m: 720px !default;
+$container-l: 960px !default;
+$container-xl: 1120px !default;
 
+// Responsive Breakpoints
+$breakpoint-m:                                  ($container-m + 20) !default;
+$breakpoint-l:                                  ($container-l + 20) !default;
+$breakpoint-xl:                                 ($container-xl + 20) !default;
 
-$red: rgba(176, 23, 31, 1);
-//$blue: #00256f;
+/* Not used at the moment */
+$red: rgba(176, 23, 31, 1); //$blue: #00256f;
 // #00256f - Dark Blue
 // #003399 - Blue
 // #B0171F - Indian red
 // #1d1d1d - Dark Grey
-
 // NOTIFICATION COLORS

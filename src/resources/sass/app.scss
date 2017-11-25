@@ -1,13 +1,34 @@
-/* DOCUMENT INFORMATION
- - Author Jeremy R Miller
- - Date" 2017+
+/* ===========================================
 
- */
-//Core Partials
+- Grizzly Power App Stylesheet
+- Author: Jeremy R Miller
+- Version: 1.0 - Last Updated: 11-25-2017
+
+ =============================================*/
+
+/* Variable and Mixins styles
+==============================*/
 @import "./utils/_variables";
 @import "./utils/_mixins";
+
+/* Base styles
+==============================*/
+@import "./base/_base";
+
+/* Page styles
+==============================*/
+@import "./pages/_pages";
+
+/* Components styles
+==============================*/
+@import "./components/_components";
+
+/* Utility Styles
+===============================*/
 @import "./utils/_util";
 @import "./utils/_animations";
-@import "./base/_base";
-@import "./pages/_pages";
-@import "./components/_components";
+// @import "./utils/_print";
+
+/* Vendor styles
+==============================*/
+@import "./vendor/_nprogress";

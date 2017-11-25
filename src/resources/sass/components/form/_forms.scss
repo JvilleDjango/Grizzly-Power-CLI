@@ -1,5 +1,4 @@
 /* === Forms === */
-
 .form-control {
   margin: 0;
   outline: none;
@@ -10,7 +9,7 @@
   font-size: 1em;
   background: transparent;
   border: none;
-    color: $blue;
+  color: $blue;
   border-radius: 0;
   box-shadow: none;
   transition: color 0.1s ease, border-color 0.1s ease;
@@ -32,14 +31,10 @@
   // font-weight: bold;
   text-transform: uppercase;
 
-
-  &:after{
-    content: ':'
+  &:after {
+    content: ':';
   }
 }
-
-
-
 // http://codepen.io/mallendeo/pen/eLIiG
 // <input class="tgl tgl-light" id="cb1" type="checkbox" />
 // <label class="tgl-btn" for="cb1"></label>
@@ -131,18 +126,17 @@
   background: $tomato;
 }
 // Radios styles
+
 .custom-control-input:checked ~ .custom-control-indicator {
-    color: #fff;
-    background-color: $tomato;
+  color: #fff;
+  background-color: $tomato;
 }
-input{
-  &:focus{
 
-      outline: -webkit-focus-ring-color auto 5px;
-      outline-color: -webkit-focus-ring-color;
-      outline-style: auto;
-      outline-width: 5px;
-
-
+input {
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 5px;
   }
 }

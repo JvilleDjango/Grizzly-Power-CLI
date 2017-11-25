@@ -1,11 +1,12 @@
 body {
   margin: 0;
   font-family: $font-stack-roboto;
-  background: #fff;
+  background: $gp-background-color;
   overflow: hidden;
 
   a {
     color: $blue;
+    
   }
 
   .page-host {

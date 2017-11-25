@@ -1,18 +1,19 @@
 <template>
-<require from="bootstrap/css/bootstrap.css"></require>
-<require from="./css/app.css"></require>
-<require from="./modules/navigation/nav-bar"></require>
-<require from="./modules/navigation/side-navigation.html"></require>
-<nav-bar></nav-bar>
+  <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="./css/app.css"></require>
+  <require from="./modules/navigation/nav-bar"></require>
+  <require from="./modules/navigation/side-navigation.html"></require>
+  <nav-bar></nav-bar>
+  <loading-indicator loading.bind="router.isNavigating || api.isRequesting"></loading-indicator>
 
-<section class="page-host container-fluid flex-container">
-  <div class="row">
-    <div class="col-2">
-      <side-navigation router.bind="router"></side-navigation>
+  <section class="page-host container-fluid flex-container">
+    <div class="row">
+      <div class="col-2">
+        <side-navigation router.bind="router"></side-navigation>
+      </div>
+      <div class="col content isOpen">
+        <router-view></router-view>
+      </div>
     </div>
-    <div class="col content isOpen">
-      <router-view></router-view>
-    </div>
-  </div>
-</section>
+  </section>
 </template>

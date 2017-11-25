@@ -77,6 +77,11 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
+          {
+            "name": "aurelia-animator-css",
+            "path": "../node_modules/aurelia-animator-css/dist/amd",
+            "main": "index"
+          },
           "text",
           "jquery",
           "moment",
@@ -144,7 +149,7 @@
     "displayName": "Sass",
     "fileExtension": ".scss",
     "source": "src/resources/sass/**/*.scss",
-    "output" : "src/css"
+    "output": "src/css"
   },
   "editor": {
     "id": "atom",

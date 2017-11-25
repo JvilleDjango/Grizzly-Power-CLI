@@ -2,7 +2,7 @@ export class App {
   configureRouter(config, router) {
     config.title = 'Grizzly Power';
     config.options.icon = 'fitness_center';
-     //config.options.pushState = true;
+    //config.options.pushState = true;
 
     config.map([{
         route: 'profile',
@@ -62,8 +62,7 @@ export class App {
         settings: {
           icon: 'settings'
         }
-      }
-      ,
+      },
       {
         route: 'workout',
         name: 'workout',

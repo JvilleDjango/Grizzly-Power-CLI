@@ -1,124 +1,129 @@
 <template>
-<section class="settings">
-<header>
-  <h1>Settings</h1>
-</header>
+  <section class="settings">
+    <header>
+      <h1>Settings</h1>
+    </header>
 
-<div class="flex-card-container container-fluid settings-box" repeat.for="set of settings">
-  <!-- WEIGHT UNITS -->
-  <div class="flex-card flex-1 ">
-    <div class="flex-card--block">
-      <h4 class="flex-card--title ">Weight Unit</h4>
-      <div class="flex-card--body">
-        <label repeat.for="unit of units" class="custom-control custom-radio">
-            <input name="weight-unit" type="radio" class="custom-control-input" checked.bind="$parent.set.units" value.bind="unit">
-            <span class="custom-control-indicator"></span>
-            <span class="custom-control-description">${unit}</span>
-          </label>
+    <div class="flex-card-container container-fluid settings-box" repeat.for="set of settings">
+      <!-- WEIGHT UNITS -->
+      <div class="flex-card flex-1 ">
+        <div class="flex-card--block">
+          <h4 class="flex-card--title ">Weight Unit</h4>
+          <div class="flex-card--body">
+            <label repeat.for="unit of units" class="custom-control custom-radio">
+              <input name="weight-unit" type="radio" class="custom-control-input" checked.bind="$parent.set.units" value.bind="unit">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">${unit}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- TIMER -->
+      <div class="flex-card flex-1 ">
+        <div class="flex-card--block">
+          <div class="flex-card--title ">
+            <div class="float-md-right">
+              <input class="tgl tgl-light" id="cb2" type="checkbox" checked.bind="set.timer" value.bind="set.timer"/>
+              <label class="tgl-btn" for="cb2"></label>
+            </div>Timer
+            <br/>
+            <small class='form-text text-muted'>
+              <em>Start timer after each set</em>
+            </small>
+          </div>
+          <div class="flex-card--body display-3 color-tomato">
+            ${set.timer}
+          </div>
+        </div>
+      </div>
+      <!-- AUTO ADD WEIGHT -->
+      <div class="flex-card flex-1 ">
+        <div class="flex-card--block">
+          <div class="flex-card--title ">
+            <div class="float-md-right" repeat.for="set of settings">
+              <input class="tgl tgl-light" id="cb1" type="checkbox" checked.bind="set.autoAdd.auto" value.bind="set.autoAdd.auto"/>
+              <label class="tgl-btn" for="cb1"></label>
+            </div>
+            Auto-add weight
+          </div>
+          <div class="flex-card--body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="howMuchWeight" aria-describedby="howMuchWeight" placeholder="How Much Weight?" value.bind="settings[0].autoAdd.weight  + ' lbs'">
+              <small id="howMuchWeight" class="form-text text-muted">This weight will automatically be added once your goal is met</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- GRAND GOALS -->
+      <div class="flex-card flex-1 ">
+        <div class="flex-card--block">
+          <h4 class="flex-card--title ">Grand Goals</h4>
+          <div class="flex-card--body">
+            <div class="form-group">
+              <label for="Bench" class="col-form-label">Bench</label>
+              <input class="form-control" type="text" value.bind="settings[0].goals.bench  + ' lbs'" id="Bench">
+            </div>
+
+            <div class="form-group">
+              <label for="Squat" class="col-form-label">Squat</label>
+              <input class="form-control" type="text" value.bind="settings[0].goals.squat + ' lbs'" id="Squat">
+            </div>
+
+            <div class="form-group">
+              <label for="Deadlift" class="col-form-label">Deadlift</label>
+              <input class="form-control" type="text" value.bind="settings[0].goals.deadlift + ' lbs'" id="Deadlift">
+            </div>
+
+            <div class="form-group">
+              <label for="Over-Head-Press" class="col-form-label">OH-Press</label>
+              <input class="form-control" type="text" value.bind="settings[0].goals.ohpress + ' lbs' " id="Over-Head-Press">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ASSISTANCE EXERCISES LIST -->
+      <div class="flex-card flex-1 ">
+        <div class="flex-card--block">
+          <h4 class="flex-card--title ">Assistance Exercises</h4>
+          <div class="flex-card--body">
+            <div class="form-group " repeat.for="assist_exercise of $parent.assistance_exercise">
+              <label class="custom-control custom-checkbox">
+                <span class="custom-control-description">${assist_exercise}</span>
+                <input type="checkbox" class="custom-control-input" checked.bind="$parent.set.assistance_exercise" value.bind="assist_exercise">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PRS -->
+      <div class="flex-card flex-1 ">
+        <div class="flex-card--block">
+          <h4 class="flex-card--title ">Personal Records (PRS)</h4>
+          <div class="flex-card--body">
+            <div class="form-group ">
+              <label for="Bench" class="col-form-label">Bench</label>
+              <input class="form-control" type="text" value.bind="settings[0].records.bench  + ' lbs'" id="Bench">
+            </div>
+
+            <div class="form-group">
+              <label for="Squat" class="col-form-label">Squat</label>
+              <input class="form-control" type="text" value.bind="settings[0].records.squat + ' lbs'" id="Squat">
+            </div>
+
+            <div class="form-group">
+              <label for="Deadlift" class="col-form-label">Deadlift</label>
+              <input class="form-control" type="text" value.bind="settings[0].records.deadlift + ' lbs'" id="Deadlift">
+            </div>
+
+            <div class="form-group">
+              <label for="Over-Head-Press" class="col-form-label">OH-Press</label>
+              <input class="form-control" type="text" value.bind="settings[0].records.ohpress + ' lbs' " id="Over-Head-Press">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- TIMER -->
-  <div class="flex-card flex-1 ">
-    <div class="flex-card--block">
-      <div class="flex-card--title ">
-        <div class="float-md-right">
-          <input class="tgl tgl-light" id="cb2" type="checkbox" checked.bind="set.timer" value.bind="set.timer" />
-          <label class="tgl-btn" for="cb2"></label>
-        </div>Timer <br /><small class='form-text text-muted'><em>Start timer after each set</em></small>
-      </div>
-      <div class="flex-card--body display-3 color-tomato">
-        ${set.timer}
-      </div>
-    </div>
-  </div>
-  <!-- AUTO ADD WEIGHT -->
-  <div class="flex-card flex-1 ">
-    <div class="flex-card--block">
-      <div class="flex-card--title ">
-        <div class="float-md-right" repeat.for="set of settings">
-          <input class="tgl tgl-light" id="cb1" type="checkbox" checked.bind="set.autoAdd.auto" value.bind="set.autoAdd.auto" />
-          <label class="tgl-btn" for="cb1"></label>
-        </div>
-        Auto-add weight
-      </div>
-      <div class="flex-card--body">
-        <div class="form-group">
-          <input type="text" class="form-control" id="howMuchWeight" aria-describedby="howMuchWeight" placeholder="How Much Weight?" value.bind="settings[0].autoAdd.weight  + ' lbs'">
-          <small id="howMuchWeight" class="form-text text-muted">This weight will automatically be added once your goal is met</small>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- GRAND GOALS -->
-  <div class="flex-card flex-1 ">
-    <div class="flex-card--block">
-      <h4 class="flex-card--title ">Grand Goals</h4>
-      <div class="flex-card--body">
-        <div class="form-group">
-          <label for="Bench" class="col-form-label">Bench</label>
-            <input class="form-control" type="text" value.bind="settings[0].goals.bench  + ' lbs'" id="Bench">
-        </div>
-
-        <div class="form-group">
-          <label for="Squat" class="col-form-label">Squat</label>
-            <input class="form-control" type="text" value.bind="settings[0].goals.squat + ' lbs'" id="Squat">
-        </div>
-
-        <div class="form-group">
-          <label for="Deadlift" class="col-form-label">Deadlift</label>
-            <input class="form-control" type="text" value.bind="settings[0].goals.deadlift + ' lbs'" id="Deadlift">
-        </div>
-
-        <div class="form-group">
-          <label for="Over-Head-Press" class="col-form-label">OH-Press</label>
-            <input class="form-control" type="text" value.bind="settings[0].goals.ohpress + ' lbs' " id="Over-Head-Press">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ASSISTANCE EXERCISES LIST -->
-  <div class="flex-card flex-1 ">
-    <div class="flex-card--block">
-      <h4 class="flex-card--title ">Assistance Exercises</h4>
-      <div class="flex-card--body">
-        <div class="form-group " repeat.for="assist_exercise of $parent.assistance_exercise">
-          <label class="custom-control custom-checkbox">
-            <span class="custom-control-description">${assist_exercise}</span>
-            <input type="checkbox" class="custom-control-input" checked.bind="$parent.set.assistance_exercise" value.bind="assist_exercise">
-            <span class="custom-control-indicator"></span>
-          </label></div>
-      </div>
-    </div>
-  </div>
-  <!-- PRS  -->
-  <div class="flex-card flex-1 ">
-    <div class="flex-card--block">
-      <h4 class="flex-card--title ">Personal Records (PRS)</h4>
-      <div class="flex-card--body">
-        <div class="form-group ">
-          <label for="Bench" class="col-form-label">Bench</label>
-            <input class="form-control" type="text" value.bind="settings[0].records.bench  + ' lbs'" id="Bench">
-        </div>
-
-        <div class="form-group">
-          <label for="Squat" class="col-form-label">Squat</label>
-            <input class="form-control" type="text" value.bind="settings[0].records.squat + ' lbs'" id="Squat">
-        </div>
-
-        <div class="form-group">
-          <label for="Deadlift" class="col-form-label">Deadlift</label>
-            <input class="form-control" type="text" value.bind="settings[0].records.deadlift + ' lbs'" id="Deadlift">
-        </div>
-
-        <div class="form-group">
-          <label for="Over-Head-Press" class="col-form-label">OH-Press</label>
-            <input class="form-control" type="text" value.bind="settings[0].records.ohpress + ' lbs' " id="Over-Head-Press">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
+  </section>
 </template>
