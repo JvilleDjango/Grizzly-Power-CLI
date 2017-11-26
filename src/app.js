@@ -1,3 +1,7 @@
+import {inject} from 'aurelia-framework';
+
+
+
 export class App {
   configureRouter(config, router) {
     config.title = 'Grizzly Power';

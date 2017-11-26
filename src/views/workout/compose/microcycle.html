@@ -1,12 +1,13 @@
 <template>
-<!-- MICROCYCLES -->
-<div class="microcycle col-md-12">
-  <h2>MicroCycles</h2>
-  <label class="custom-control custom-radio" repeat.for="cycle of microcycle">
-    <input type="radio" id="radio3" name="radio" class="custom-control-input" model.bind="cycle" checked.bind="selectedMicrocycle">
+  <!-- MICROCYCLES -->
+  <div class="microcycle col">
+    <h2>MicroCycles</h2>
+    <label class="custom-control custom-radio" repeat.for="cycle of microcycle">
+      <input type="radio" id="radio3" name="radio" class="custom-control-input" model.bind="cycle" checked.bind="selectedMicrocycle">
       <span class="control-indicator"></span>
-    <!-- <span class="custom-control-indicator"></span> -->
-    <span class="custom-control-description"> ${cycle.name}</span>
+      <!-- <span class="custom-control-indicator"></span> -->
+      <span class="custom-control-description">
+        ${cycle.name}</span>
     </label>
-</div>
+  </div>
 </template>

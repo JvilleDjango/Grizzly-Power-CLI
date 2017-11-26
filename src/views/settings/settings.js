@@ -1,32 +1,28 @@
 import {inject} from 'aurelia-framework';
-import {SettingsRepo} from 'resources/services/settingsRepo';
+import {AppApi} from 'resources/services/app-api';
+import {UserApi} from 'resources/services/user-api';
 
-@inject(SettingsRepo)
+@inject(AppApi, UserApi)
 export class Settings {
-  constructor(settingsRepo) {
-    this._settingsRepo = settingsRepo;
-    this.settings = [];
-    this.units = [];
-    this.assistance_exercise = [];
+  constructor(appApi, userApi) {
+    this._appApi = appApi;
+    this.appData = [];
+
+    this._userApi = userApi;
+    this.userData = [];
+
     this.selectedUnit = null;
 
-    this._settingsRepo.getSettings()
-      .then(settings => {
-        this.settings = settings;
+    this._appApi.getAppData()
+      .then(appData => {
+        this.appData = appData
       });
 
-    this._settingsRepo.getWeightUnit()
-      .then(units => {
-        this.units = units;
-      });
-
-    this._settingsRepo.getAssistanceExercise()
-      .then(assistance_exercise => {
-        this.assistance_exercise = assistance_exercise;
+    this._userApi.getUserData()
+      .then(userData => {
+        this.userData = userData
       });
 
   }
-  activate() {
 
-  }
 }
