@@ -1,17 +1,16 @@
 import {inject} from 'aurelia-framework';
-import {ProfileRepo} from 'resources/services/profileRepo';
+import {UserApi} from 'resources/services/user-api';
 
-@inject(ProfileRepo)
+@inject(UserApi)
 export class Profile {
-  constructor(profileRepo) {
-    this._profileRepo = profileRepo;
-    this.profile = [];
+  constructor(userApi) {
+    this._userApi = userApi;
+    this.userData = [];
 
-    this._profileRepo.getProfile()
-    .then(profile =>{
-      this.profile = profile;
-    });
+    this._userApi.getUserData()
+      .then(userData => {
+        this.userData = userData
+      });
+
   }
-
-
 }
