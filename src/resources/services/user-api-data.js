@@ -5,8 +5,6 @@ function getId() {
   return ++id;
 }
 
-
-
 export var userData = [{
     user: {
       id: getId(),
