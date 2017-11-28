@@ -9,28 +9,6 @@ export class UserApi {
 
   getUserData() {
     this.isRequesting = true;
-    // return new Promise((resolve, reject) => {
-    //   if (!this.userData) {
-    //     setTimeout(() => {
-    //       this.userData = userData;
-    //       let results = this.userData.map(x => {
-    //         return {
-    //           id: x.id,
-    //           userName: x.userName,
-    //           fullName: x.fullName,
-    //           email: x.email,
-    //           phone: x.phone,
-    //           profileImg: x.profileImg
-    //         }
-    //       });
-    //       resolve(results);
-    //       this.isRequesting = false;
-    //     }, 200);
-    //   } else {
-    //     resolve(this.userData)
-    //   }
-    // });
-
 
     var promise = new Promise((resolve, reject) => {
       if (!this.userData) {
@@ -44,5 +22,5 @@ export class UserApi {
       }
     });
     return promise;
- }
+  }
 }

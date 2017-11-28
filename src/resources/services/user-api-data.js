@@ -43,10 +43,10 @@ export var userData = [{
           weight: '355'
         },
         deadlift: {
-          weight: '355'
+          weight: '455'
         },
         ohpress: {
-          weight: '355'
+          weight: '155'
         }
       },
       assistance_exercise: [
